@@ -5,7 +5,7 @@ module.exports = {
   title: 'Blog by Jack Spiva',
   subtitle: 'Recording some stuff I know.',
   copyright: '© All rights reserved.',
-  disqusShortname: 'Jack',
+  disqusShortname: 'jack-spiva-blog',
   postsPerPage: 4,
   googleAnalyticsId: 'UA-96911350-2',
   menu: [
