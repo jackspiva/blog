@@ -6,10 +6,6 @@
   A blog built using <a href="https://github.com/gatsbyjs/gatsby" target="_blank">Gatsby</a> based on the Gatsby starter <a href="https://github.com/alxshelepenok/gatsby-starter-lumen">Lumen</a>.
 </h4>
 
-<p align="center">
-    <a target="_blank" href="https://circleci.com/gh/jackspiva/blog"><img src="https://circleci.com/gh/jackspiva/blog.svg?style=svg"></a>
-</p>
-
 ## Table of contents
 
 - [Introduction]
