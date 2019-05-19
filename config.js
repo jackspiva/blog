@@ -5,9 +5,9 @@ module.exports = {
   title: 'Blog by Jack Spiva',
   subtitle: 'Recording some stuff I know.',
   copyright: '© All rights reserved.',
-  disqusShortname: '',
+  disqusShortname: 'Jack',
   postsPerPage: 4,
-  googleAnalyticsId: 'UA-73379983-2',
+  googleAnalyticsId: 'UA-96911350-2',
   menu: [
     {
       label: 'Articles',
@@ -27,10 +27,10 @@ module.exports = {
     photo: '/photo.jpg',
     bio: 'Recording some stuff I know.',
     contacts: {
-      email: 'johnspiva@gmail.com',
+      email: 'jackspiva@gmail.com',
       telegram: '#',
       twitter: '#',
-      github: 'johnspiva',
+      github: 'jackspiva',
       rss: '#',
       spotify: '1211402988'
     }
