@@ -2,8 +2,8 @@
 
 module.exports = {
   url: 'https://lumen.netlify.com',
-  title: 'Blog by John Doe',
-  subtitle: 'Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.',
+  title: 'Blog by Jack Spiva',
+  subtitle: 'Recording some stuff I know.',
   copyright: '© All rights reserved.',
   disqusShortname: '',
   postsPerPage: 4,
@@ -23,16 +23,16 @@ module.exports = {
     }
   ],
   author: {
-    name: 'John Doe',
+    name: 'Jack Spiva',
     photo: '/photo.jpg',
-    bio: 'Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.',
+    bio: 'Recording some stuff I know.',
     contacts: {
-      email: '#',
+      email: 'johnspiva@gmail.com',
       telegram: '#',
       twitter: '#',
-      github: '#',
+      github: 'johnspiva',
       rss: '#',
-      vkontakte: '#'
+      spotify: '1211402988'
     }
   }
 };
