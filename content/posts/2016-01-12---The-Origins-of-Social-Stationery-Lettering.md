@@ -1,5 +1,4 @@
 ---
-template: post
 title: The Origins of Social Stationery Lettering
 date: '2016-12-01T22:40:32.169Z'
 template: 'post'
