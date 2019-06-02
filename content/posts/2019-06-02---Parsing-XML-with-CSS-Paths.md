@@ -17,7 +17,8 @@ One major pain point was dealing with their request responses, which are in the 
 I knew that we use the Nokogiri Ruby gem for some parsing and that it was probably the tool I'd want to use to parse the API response, but had basically no experience with it. When I originally wrote our basic Amazon Pay integration code, I used two different methods of parsing XML. Initially I had just created a hash from the XML the from_xml method provided by ActiveSupport in Rails. This allowed me to do something like:
 
 ```ruby
-parsed_response = Hash.from_xml(xml)status = parsed_response.dig('AuthorizeResponse', 'AuthorizeResult', 'AuthorizationDetails', 'AuthorizationStatus')
+parsed_response = Hash.from_xml(xml)
+status = parsed_response.dig('AuthorizeResponse', 'AuthorizeResult', 'AuthorizationDetails', 'AuthorizationStatus')
 ```
 
 I then tried using XPaths to parse the responses and it took me quite awhile to get the paths exactly right and working consistently. This looked something like:
