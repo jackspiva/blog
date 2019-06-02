@@ -24,7 +24,9 @@ status = parsed_response.dig('AuthorizeResponse', 'AuthorizeResult', 'Authorizat
 I then tried using XPaths to parse the responses and it took me quite awhile to get the paths exactly right and working consistently. This looked something like:
 
 ```ruby
-parsed_response = Nokogiri::XML(response.body)state_xpath = "//RefundResponse//RefundResult//RefundDetails//RefundStatus//State"amazon_status = parsed_response.at_xpath(state_xpath).content
+parsed_response = Nokogiri::XML(response.body)
+state_xpath = "//RefundResponse//RefundResult//RefundDetails//RefundStatus//State"
+amazon_status = parsed_response.at_xpath(state_xpath).content
 ```
 
 Again, XPaths are something I have very little knowledge of, so probably I was just not using them in a very clever way, but regardless it was a real pain to get up and running.
