@@ -5,7 +5,7 @@ slug: parsing-xml-with-css-paths
 draft: false
 date: 2019-06-02T15:35:37.417Z
 description: >-
-  I recently learned that you can use CSS paths to parse XML, which made my work
+  I recently learned that you can use CSS paths to parse XML with the Nokogiri Ruby gem, which made my work
   parsing XML responses from the Amazon Pay API much easier.
 category: rails
 ---
