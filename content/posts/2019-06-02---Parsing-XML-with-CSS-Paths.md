@@ -33,7 +33,7 @@ Again, XPaths are something I have very little knowledge of, so probably I was j
 
 This time I did a bit more reading about Nokogiri and how to parse XML and saw that the Nokogiri documentation [here](https://nokogiri.org/tutorials/searching_a_xml_html_document.html) suggests using CSS paths instead of XPaths to search XML. I followed their suggestion and it made things much, much easier.
 
-Using CSS paths made my code more readable and less fragile. It may not look that different than the XPath code, but having no essentially no knowledge of how XPaths work meant that using CSS paths saved me a lot of uncertainty and Googling around. Since I was already very comfortable using CSS paths, it required very little documentation reading once I realized Nokogiri offers an at_css method. Now my parsing code reads like this:
+Using CSS paths made my code more readable and less fragile. It may not look that different than the XPath code, but having no essentially no knowledge of how XPaths work meant that using CSS paths saved me a lot of uncertainty and Googling around. Since I was already very comfortable using CSS paths, it required very little documentation reading once I found out about Nokogiri's `at_css` method. Now my parsing code reads like this:
 
 ```ruby
 parsed_response = Nokogiri::XML(response.body)
