@@ -2,14 +2,15 @@
 template: post
 title: Parsing XML with CSS Paths
 slug: parsing-xml-with-css-paths
-draft: true
+draft: false
 date: 2019-06-02T15:35:37.417Z
 description: >-
   I recently learned that you can use CSS paths to parse XML, which made my work
   parsing XML responses from the Amazon Pay API much easier.
 category: rails
 ---
-Recently I've been adding the ability to issue refunds through Amazon Pay from our website's admin tables. This meant revisiting Amazon Pay's extremely frustrating documentation and dealing with a lot of the weird ways they seem to do things. I did notice that Amazon recently updated the UI around their developer docs for Amazon Pay and it does look nicer, but I think everything around their API seems even more painful because Stripe's is so well documented and easy to use. 
+
+Recently I've been adding the ability to issue refunds through Amazon Pay from our website's admin tables. This meant revisiting Amazon Pay's extremely frustrating documentation and dealing with a lot of the weird ways they seem to do things. I did notice that Amazon recently updated the UI around their developer docs for Amazon Pay and it does look nicer, but I think everything around their API seems even more painful because Stripe's is so well documented and easy to use.
 
 One major pain point was dealing with their request responses, which are in the markup language [XML](https://en.wikipedia.org/wiki/XML). I've only dealt with XML in the context of adding Amazon Pay functionality to this app, so I don't think I really know enough to be critical of it, but I found it difficult to deal with simply because of my inexperience and because it's not something our development team has any default way of handling. We are typically dealing with JSON, which I have found super easy to get used to, so when it came time to parse XML returned from Amazon I was on my own. Additionally, because Amazon's documentation is so poor, it was not always clear what exactly I could expect from their XML and where all the information I wanted would be located within the response.
 
@@ -25,11 +26,12 @@ I then tried using XPaths to parse the responses and it took me quite awhile to 
 parsed_response = Nokogiri::XML(response.body)state_xpath = "//RefundResponse//RefundResult//RefundDetails//RefundStatus//State"amazon_status = parsed_response.at_xpath(state_xpath).content
 ```
 
-Again, XPaths are something I have very little knowledge of, so probably I was just not using them in a very clever way, but regardless it was a real pain to get up and running. 
+Again, XPaths are something I have very little knowledge of, so probably I was just not using them in a very clever way, but regardless it was a real pain to get up and running.
 
 This time I did a bit more reading about Nokogiri and how to parse XML and saw that the Nokogiri documentation [here](https://nokogiri.org/tutorials/searching_a_xml_html_document.html) suggests using CSS paths instead of XPaths to search XML. I followed their suggestion and it made things much, much easier.
 
 Using CSS paths made my code significantly more readable and less fragile. Plus since I was already very comfortable using CSS paths, it required very little documentation reading once I realized Nokogiri offers an at_css method. Now my parsing code reads like this:
+
 ```ruby
 parsed_response = Nokogiri::XML(response.body)
 state_xpath = "RefundResponse RefundResult RefundDetails RefundStatus State"
