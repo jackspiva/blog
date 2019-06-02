@@ -23,7 +23,7 @@ module.exports = {
     photo: '/photo.jpg',
     bio: 'Recording some stuff I know.',
     contacts: {
-      email: 'jackspiva@gmail.com',
+      email: 'me@jackspiva.dev',
       telegram: '#',
       twitter: '#',
       github: 'jackspiva',
