@@ -9,7 +9,7 @@ description: >-
 category: rails
 ---
 
-A coworker of mine recently started using a new `ActiveRecord` syntax that has made a lot of our queries much cleaner and more powerful. Ever since I started using `ActiveRecord` I've struggled to find a good way to write queries where I use a scope from a model that is being joined to the primary table. This solved that!
+A coworker of mine recently started using a new ActiveRecord syntax that has made a lot of our queries much cleaner and more powerful. Ever since I started using ActiveRecord I've struggled to find a good way to write queries where I use a scope from a model that is being joined to the primary table. This solved that!
 
 The most common use case I've seen so far with this is when we are grabbing some sort of data from our database, but want to exclude a certain subset rows because they are associated with test users instead of real ones. This comes up all the time, like when we're reporting on revenue and want to exclude any purchases made by a user who has an email address from our company. In the past, I'd write a query like this:
 
@@ -25,7 +25,7 @@ scope :where_not_company_affiliated, -> {
 }
 ```
 
-Another reason the first query isn't ideal is that any time we want to add to the logic of which users we exclude, we have to update every query that has the `.where("users.email not like '%mycompany.com'")` line in it. Additionally, it's just not great for these queries related to the purchases table to rely on specific column values in a separate table. The `merge` syntax that I've started using allows us to just use an existing scope in the users table. So now I write the following:
+Another reason the first query isn't ideal is that any time we want to add to the logic of which users we exclude, we have to update every query that has the `.where("users.email not like '%mycompany.com'")` line in it. Additionally, it's just not great for these queries related to the purchases table to rely on specific column values in a separate table. The merge method that I've started using allows us to just use an existing scope in the users table. So now I write the following:
 
 ```ruby
 Purchase.joins(:user).merge(User.where_not_company_affiliated)
