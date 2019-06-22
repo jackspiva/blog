@@ -8,7 +8,6 @@
 
 ## Table of contents
 
-- [Introduction]
 - [Features](http://github.com/jackspiva/blog#features)
 - [To Develop](http://github.com/jackspiva/blog#accesslocally)
 - [Folder Structure](http://github.com/jackspiva/blog#folder-structure)
