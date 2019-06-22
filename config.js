@@ -3,7 +3,7 @@
 module.exports = {
   url: 'https://lumen.netlify.com',
   title: 'Blog by Jack Spiva',
-  subtitle: 'Recording some stuff I know.',
+  subtitle: 'Recording some stuff I\'ve learned.',
   copyright: '© All rights reserved.',
   disqusShortname: 'jack-spiva-blog',
   postsPerPage: 4,
@@ -21,7 +21,7 @@ module.exports = {
   author: {
     name: 'Jack Spiva',
     photo: '/photo.jpg',
-    bio: 'Recording some stuff I know.',
+    bio: 'Recording some stuff I\'ve learned.',
     contacts: {
       email: 'me@jackspiva.dev',
       telegram: '#',
